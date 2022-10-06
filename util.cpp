@@ -3,6 +3,7 @@
 #include <cctype>
 #include <algorithm>
 #include "util.h"
+#include <string>
 
 using namespace std;
 std::string convToLower(std::string src)
@@ -15,16 +16,26 @@ std::string convToLower(std::string src)
     to a set of words based on the criteria given in the assignment **/
 std::set<std::string> parseStringToWords(string rawWords)
 {
-
-
-
-
-
-
-
-
-
-
+    set<string> keywords;
+    int count = 0;
+    string temp;
+    //loop through the given string, checking for any non alphabet characters
+    //temp variable holds the seperated section if it is larger than 2 characters and is then placed into a set
+    for(unsigned int i = 0; i <= rawWords.size(); i++){
+        if(isalpha(rawWords[i])==true){
+            temp[count]=rawWords[i];
+            count++;
+        }
+        else{
+            if(count>2){
+                temp = convToLower(temp);
+                keywords.insert(temp);
+            }
+            temp.clear();
+            count = 0;
+        }
+    }
+    return keywords;
 }
 
 /**************************************************

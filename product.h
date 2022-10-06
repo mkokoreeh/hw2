@@ -8,7 +8,7 @@
 
 class Product {
 public:
-    Product(const std::string category, const std::string name, double price, int qty);
+    Product();
     virtual ~Product();
 
     /**
